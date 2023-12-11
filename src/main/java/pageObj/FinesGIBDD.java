@@ -25,7 +25,7 @@ public class FinesGIBDD {
     }
     @Step("Проверка на отображение списка услуг" )
     public void checkDriverLicenseIsDisplayed() {
-        assertTrue("Отобразился спиcок услуг ",driver.findElement(numberDriverLicense).isDisplayed());
+        assertTrue("не отобразился спиcок услуг ",driver.findElement(numberDriverLicense).isDisplayed());
     }
     @Step("Выбор вкладки поиск по документам" )
     public void clickSearchDocuments() {

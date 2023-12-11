@@ -12,11 +12,15 @@ public class ToolBar {
     private  By selectService = By.xpath("//i[@class='header-nav__icon icon-dropdown']");
     private  By listServices=By.xpath("//li[contains(@class,'dropdown open')]/div/ul");
     private  By fineGibdd=By.xpath("//li[contains(@class,'dropdown open')]/div/ul/li/a/span[text()='Штрафы ГИБДД']");
-
+    private By logo=By.xpath("//img[@class='logo-block__image']");
     public ToolBar(WebDriver driver) {
         this.driver = driver;
     }
 
+    @Step("Проверка отображения лого" )
+    public void checkLogoIsDisplayed() {
+        assertTrue("Не отобразился спиcок услуг ",driver.findElement(logo).isDisplayed());
+    }
    @Step("Проверка на отображение списка услуг" )
     public void checkServicesIsDisplayed() {
         assertTrue("Не отобразился спиcок услуг ",driver.findElement(listServices).isDisplayed());

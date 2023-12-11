@@ -1,5 +1,5 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
-import jdk.jfr.Description;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -29,10 +29,11 @@ public class OplataGosuslugTest {
     }
 
     @Test
-    @Description("Успешный поиск штрафа ГИБДД ")
+    @DisplayName("Успешный поиск штрафа ГИБДД ")
     public void succesSearchFine() {
 
         ToolBar toolBar = new ToolBar(driver);
+        toolBar.checkLogoIsDisplayed();
         toolBar.clickServiceBtn();
         toolBar.checkServicesIsDisplayed();
         toolBar.checkFinesGibddIsDisplayed();
@@ -56,10 +57,11 @@ public class OplataGosuslugTest {
     }
 
     @Test
-    @Description("Добавление квитанции при оплате с телефона ")
+    @DisplayName("Добавление квитанции при оплате с телефона ")
     public void succesSearchFineWithPayTelDoc() {
 
         ToolBar toolBar = new ToolBar(driver);
+        toolBar.checkLogoIsDisplayed();
         toolBar.clickServiceBtn();
         toolBar.checkServicesIsDisplayed();
         toolBar.checkFinesGibddIsDisplayed();
